@@ -1,0 +1,1 @@
+import{j as i,L as s}from"./index-B31PEHNl.js";import{d as a}from"./data-C0-iocHs.js";function t(){return i.jsx("ul",{children:a.map(r=>i.jsx("li",{children:i.jsxs(s,{to:`/detail/${r.id}`,children:[i.jsx("div",{children:r.name}),i.jsx("img",{src:r.img})]})},r.id))})}export{t as default};

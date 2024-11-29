@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import "./App.css";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Detail from "./page/Detail";
-import Main from "./page/main";
-import Search from "./page/Search";
+
+const Main = lazy(() => import("./page/main"));
+const Detail = lazy(() => import("./page/Detail"));
+const Search = lazy(() => import("./page/Search"));
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -20,11 +21,13 @@ function App() {
           검색
         </button>
       </header>
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
-        <Route path="/detail/:id" element={<Detail />}></Route>
-        <Route path="/search" element={<Search />}></Route>
-      </Routes>
+      <Suspense fallback={<h1>로딩중...</h1>}>
+        <Routes>
+          <Route path="/" element={<Main />}></Route>
+          <Route path="/detail/:id" element={<Detail />}></Route>
+          <Route path="/search" element={<Search />}></Route>
+        </Routes>
+      </Suspense>
       <footer>all rights reserved to OZ</footer>
     </>
   );

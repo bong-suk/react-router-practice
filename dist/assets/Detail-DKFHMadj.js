@@ -1,0 +1,1 @@
+import{u as t,j as s}from"./index-B31PEHNl.js";import{d as e}from"./data-C0-iocHs.js";function d(){const i=t(),a=e.find(r=>r.id===Number(i.id));return s.jsxs("section",{className:"detail",children:[s.jsx("img",{src:a.img}),s.jsx("h2",{children:a.name}),s.jsx("div",{children:a.description})]})}export{d as default};
